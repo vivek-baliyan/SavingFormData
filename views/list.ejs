@@ -1,0 +1,31 @@
+<%- include("header") -%>
+
+<body class="bg-light">
+  <div class="container">
+    <main>
+      <table class="table">
+        <tr>
+          <thead>
+            <th>S.no.</td>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>Description</th>
+          </thead>
+        </tr>
+        <tbody></tbody>
+        <% itemList.forEach(function(item, i){%>
+        <tr>
+          <td><%= i+1  %></td>
+          <td><%= item.FirstName  %></td>
+          <td><%= item.LastName  %></td>
+          <td><%= moment(item.DateOfBirth).format("DD MMM YYYY")  %></td>
+          <td><%= item.StudentDescription  %></td>
+        </tr>
+        <% })%>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <%- include("footer") -%>
